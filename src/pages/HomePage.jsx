@@ -11,7 +11,7 @@ import useFetchData from "../hooks/UseFetchData";
 import UseSelectedQuestions from "../hooks/UseSelectedQuestions";
 import UseCopyTo from "../hooks/useCopyTo";
 
-const socket = io("http://localhost:5000");
+const socket = io("https://chatbotbackend-zsp1.onrender.com");
 
 const HomePage = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
