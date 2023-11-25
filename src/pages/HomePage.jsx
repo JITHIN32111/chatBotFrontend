@@ -24,11 +24,16 @@ const HomePage = () => {
   };
 
   const sendMessage = () => {
-    const userMessage = { content: inputMessage, sender: "user" };
-    setConversation([...conversation, userMessage]);
-    setLoading(true);
-    socket.emit("message", { message: inputMessage });
-    setInputMessage("");
+    try{
+      const userMessage = { content: inputMessage, sender: "user" };
+      setConversation([...conversation, userMessage]);
+      setLoading(true);
+      socket.emit("message", { message: inputMessage });
+      setInputMessage("");
+    } catch(err){
+      console.log(err);
+    }
+
   };
   const BACKEND_URL="https://chatbotbackend-zsp1.onrender.com/user/getData"
   const { data } = useFetchData(

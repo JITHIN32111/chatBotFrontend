@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 const UseSocketReply = (socket, setConversation, setLoading, conversation) => {
+  try{
     useEffect(() => {
       const handleReply = (data) => {
         const botReply = { content: data.reply, sender: "bot" };
@@ -13,6 +14,10 @@ const UseSocketReply = (socket, setConversation, setLoading, conversation) => {
         socket.off("reply", handleReply);
       };
     }, [socket, setConversation, setLoading, conversation]);
+  }catch(err){
+  console.log(err);
+  }
+    
   };
   
   export default UseSocketReply;
