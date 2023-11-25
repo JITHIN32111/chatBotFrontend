@@ -30,7 +30,7 @@ const HomePage = () => {
     socket.emit("message", { message: inputMessage });
     setInputMessage("");
   };
-  const BACKEND_URL="https://chatbotbackend-zsp1.onrender.com//user/getData"
+  const BACKEND_URL="https://chatbotbackend-zsp1.onrender.com/user/getData"
   const { data } = useFetchData(
     BACKEND_URL,
     conversation
