@@ -8,7 +8,7 @@ import ChatArea from "../components/ChatArea";
 import UseSocketReply from "../hooks/useSocketReply";
 import useFetchData from "../hooks/UseFetchData";
 import UseSelectedQuestions from "../hooks/UseSelectedQuestions";
-// import UseCopyTo from "../hooks/useCopyTo";
+import UseCopyTo from "../hooks/useCopyTo";
 
 const socket = io("https://chatbotbackend-zsp1.onrender.com");
 
@@ -44,7 +44,7 @@ const HomePage = () => {
     setConversation,
     setIsSidebarOpen
   );
-  // const { copyToClipboard } = UseCopyTo();
+  const { copyToClipboard } = UseCopyTo();
   UseSocketReply(socket, setConversation, setLoading, conversation);
 
   return (
