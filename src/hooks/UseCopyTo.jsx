@@ -14,12 +14,11 @@ const useCopyTo = () => {
           console.error("Unable to copy to clipboard", err);
         });
     };
+  
+    return { copyToClipboard };
   }catch(err){
     console.log(err);
   }
- 
-
-  return { copyToClipboard };
 };
 
 export default useCopyTo;
