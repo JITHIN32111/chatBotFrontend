@@ -3,11 +3,25 @@ import React from "react";
 import Typewriter from "typewriter-effect";
 import { FaRegCopy } from "react-icons/fa";
 import { AiOutlineLoading } from "react-icons/ai";
-
-const ChatArea = ({ conversation,inputMessage,setInputMessage,sendMessage, loading, copyToClipboard }) => {
+import {  toast } from "react-toastify";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+const ChatArea = ({ conversation,inputMessage,setInputMessage,sendMessage, loading }) => {
+  const copyToClipboard = (text) => {
+    navigator.clipboard
+      .writeText(text)
+      .then(() => {
+               toast.success("Text copied to clipboard", {
+          position: toast.POSITION.TOP_CENTER,
+        });
+      })
+      .catch((err) => {
+        console.error("Unable to copy to clipboard", err);
+      });
+  };
   return (
     <div className="ml-0 md:ml-64 transition-transform duration-300">
-      {/* ChatArea content */}
+      {/* ChatArea content */} <ToastContainer />
       <div className="flex h-screen antialiased text-gray-800">
         <div className="flex flex-row h-full w-full overflow-x-hidden">
           <div className="flex flex-col flex-auto h-full p-6">

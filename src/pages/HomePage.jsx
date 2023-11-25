@@ -9,7 +9,7 @@ import MessageInput from "../components/MessageInput";
 import UseSocketReply from "../hooks/useSocketReply";
 import useFetchData from "../hooks/UseFetchData";
 import UseSelectedQuestions from "../hooks/UseSelectedQuestions";
-import UseCopyTo from "../hooks/useCopyTo";
+// import UseCopyTo from "../hooks/useCopyTo";
 
 const socket = io("https://chatbotbackend-zsp1.onrender.com");
 
@@ -45,12 +45,12 @@ const HomePage = () => {
     setConversation,
     setIsSidebarOpen
   );
-  const { copyToClipboard } = UseCopyTo();
+  // const { copyToClipboard } = UseCopyTo();
   UseSocketReply(socket, setConversation, setLoading, conversation);
 
   return (
     <div>
-      <ToastContainer />
+     
 
       <NewSidebar data={data} handleLiClick={handleLiClick} />
 
@@ -60,7 +60,7 @@ const HomePage = () => {
         sendMessage={sendMessage}
         setInputMessage={setInputMessage}
         loading={loading}
-        copyToClipboard={copyToClipboard}
+        // copyToClipboard={copyToClipboard}
       />
 
       <MessageInput
