@@ -59,7 +59,7 @@ const HomePage = () => {
         sendMessage={sendMessage}
         setInputMessage={setInputMessage}
         loading={loading}
-        // copyToClipboard={copyToClipboard}
+        copyToClipboard={copyToClipboard}
       />
 
       <div
