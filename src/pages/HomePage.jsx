@@ -30,9 +30,9 @@ const HomePage = () => {
     socket.emit("message", { message: inputMessage });
     setInputMessage("");
   };
-
+  const BACKEND_URL="https://chatbotbackend-zsp1.onrender.com//user/getData"
   const { data } = useFetchData(
-    "https://chatbotbackend-zsp1.onrender.com//user/getData",
+    BACKEND_URL,
     conversation
   );
   const { handleLiClick } = UseSelectedQuestions(
