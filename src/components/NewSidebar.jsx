@@ -1,7 +1,7 @@
 import React from "react";
 import img from "../assets/img3.png";
 
-const NewSidebar = ({ data, handleLiClick }) => {
+const NewSidebar = ({ data, handleLiClick,isSidebarOpen}) => {
   return (
     <div
     className={`fixed h-screen bg-gray-800 text-white mt-6 rounded-lg w-64 transition-transform duration-300 ${
