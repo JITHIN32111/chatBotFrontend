@@ -5,7 +5,6 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import NewSidebar from "../components/NewSidebar";
 import ChatArea from "../components/ChatArea";
-import MessageInput from "../components/MessageInput";
 import UseSocketReply from "../hooks/useSocketReply";
 import useFetchData from "../hooks/UseFetchData";
 import UseSelectedQuestions from "../hooks/UseSelectedQuestions";
@@ -52,7 +51,7 @@ const HomePage = () => {
     <div>
      
 
-      <NewSidebar data={data} handleLiClick={handleLiClick} />
+      <NewSidebar data={data} handleLiClick={handleLiClick} isSidebarOpen={isSidebarOpen}/>
 
       <ChatArea
         conversation={conversation}
@@ -61,12 +60,6 @@ const HomePage = () => {
         setInputMessage={setInputMessage}
         loading={loading}
         // copyToClipboard={copyToClipboard}
-      />
-
-      <MessageInput
-        inputMessage={inputMessage}
-        setInputMessage={setInputMessage}
-        sendMessage={sendMessage}
       />
 
       <div

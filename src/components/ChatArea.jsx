@@ -3,32 +3,18 @@ import React from "react";
 import Typewriter from "typewriter-effect";
 import { FaRegCopy } from "react-icons/fa";
 import { AiOutlineLoading } from "react-icons/ai";
-import {  toast } from "react-toastify";
-import { ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
-const ChatArea = ({ conversation,inputMessage,setInputMessage,sendMessage, loading }) => {
-  const copyToClipboard = (text) => {
-    navigator.clipboard
-      .writeText(text)
-      .then(() => {
-               toast.success("Text copied to clipboard", {
-          position: toast.POSITION.TOP_CENTER,
-        });
-      })
-      .catch((err) => {
-        console.error("Unable to copy to clipboard", err);
-      });
-  };
+
+const ChatArea = ({ conversation,inputMessage,setInputMessage,sendMessage, loading, copyToClipboard }) => {
   return (
     <div className="ml-0 md:ml-64 transition-transform duration-300">
-      <ToastContainer/>
+      {/* ChatArea content */}
       <div className="flex h-screen antialiased text-gray-800">
         <div className="flex flex-row h-full w-full overflow-x-hidden">
           <div className="flex flex-col flex-auto h-full p-6">
             <div className="flex flex-col flex-auto mb-4 flex-shrink-0 rounded-2xl bg-gray-100 ">
               <div className="flex flex-col h-full overflow-x-auto mb-4">
                 <div className="flex flex-col h-full">
-                  <div className="col-start-6 col-end-13 p-3 rounded-lg">
+                  <div className="col-start-6 col-end-13 p-3 rounded-lg   ">
                     {conversation.length ? (
                       ""
                     ) : (
@@ -100,10 +86,11 @@ const ChatArea = ({ conversation,inputMessage,setInputMessage,sendMessage, loadi
                 <div className="relative w-full mb-6">
                   <input
                     type="text"
-                    className="flex w-full border rounded-xl focus:outline-none focus:border-indigo-300 pl-4 h-10"
+                    className="flex w-full border rounded-xl focus:outline-none focus:border-indigo-300 pl-4  h-10"
                     value={inputMessage}
                     onChange={(e) => setInputMessage(e.target.value)}
                     placeholder="Type a message..."
+                    
                   />
                 </div>
               </div>
