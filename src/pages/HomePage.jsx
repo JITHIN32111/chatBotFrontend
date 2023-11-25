@@ -32,7 +32,7 @@ const HomePage = () => {
   };
 
   const { data } = useFetchData(
-    "http://localhost:5000/api/user/getData",
+    "https://chatbotbackend-zsp1.onrender.com//user/getData",
     conversation
   );
   const { handleLiClick } = UseSelectedQuestions(
