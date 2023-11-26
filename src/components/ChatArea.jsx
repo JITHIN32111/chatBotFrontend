@@ -7,18 +7,8 @@ import {  toast } from "react-toastify";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 const ChatArea = ({ conversation,inputMessage,setInputMessage,sendMessage, loading,copyToClipboard }) => {
-  // const copyToClipboard = (text) => {
-  //   navigator.clipboard
-  //     .writeText(text)
-  //     .then(() => {
-  //              toast.success("Text copied to clipboard", {
-  //         position: toast.POSITION.TOP_CENTER,
-  //       });
-  //     })
-  //     .catch((err) => {
-  //       console.error("Unable to copy to clipboard", err);
-  //     });
-  // };
+ 
+  
   return (
     <div className="ml-0 md:ml-64 transition-transform duration-300">
       <ToastContainer/>
